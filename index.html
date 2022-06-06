@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  
+  <title>Rock, Paper, Scissors</title>
+<body>
+  <section class="header-container">
+    <div class="header">
+      <img src="images/logo.svg" alt="Rock Paper Scissor">
+    
+    <div class="score">
+      <p class='score-title'>score</p>
+      <p class="score-num">0</p>
+    </div>
+    
+    </div>
+      
+  </section>
+  <section class="button-container">
+        <div class="choice">
+          <button class="paper-btn">
+            <img src="images/icon-paper.svg" alt="paper" class="paper">
+          </button>
+          <button class="scissor-btn">
+            <img src="images/icon-scissors.svg" alt="scissor" class="scissor">
+          </button>
+          <button class="rock-btn">
+            <img src="images/icon-rock.svg" alt="rock" class="rock">
+          </button>      
+    </div>
+         
+      </section>
+      <section class="result-container display-none">
+          <div class="p-pick">
+            <h2>you picked</h2>
+            <div class="pick-img-container-p">
+              <img class='pick-img-p' src="images/icon-paper.svg">
+            </div>
+            
+          </div>
+          <div class="result-text">
+            <h1 id="result">draw</h1>
+            <button id="play-again">play again</button>
+          </div>
+          <div class="c-pick">
+            <h2>computer picked</h2>
+            <div class="pick-img-container-c">
+              <img class='pick-img-c ' src="images/icon-paper.svg">
+            </div>
+          </div>
+      </section>
+      <section class="rules-container display-none">
+        <div class="rules-box">
+          <div class="rules">
+            <div class="rules-heading">
+              <h2>Rules</h2>
+            <button class="close"><img src="images/icon-close.svg" alt="CLOSE"></button>
+            </div>
+            
+            <img src="images/image-rules.svg" alt="RULES">
+          </div>
+        </div>
+      </section>
+     
+  <section class="foter">
+    <button class="rules-btn">Rules</button>
+  </section>
+</body>
+
+</html>
