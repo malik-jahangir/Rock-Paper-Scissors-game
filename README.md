@@ -22,4 +22,4 @@ Users should be able to:
 - CSS Grid
 
 
-- Live Site URL: https://rockpaperscissors-site.netlify.app
+Live Site URL: https://rockpaperscissors-site.netlify.app
