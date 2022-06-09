@@ -34,24 +34,14 @@ rulesbtn.addEventListener("click", () => {
 });
 ///////////////
 let score = 0;
-let c;
-let p;
+let computer;
+let player;
 const choices = ["rock", "paper", "scissors"];
 const rand = function () {
-  c = Math.floor(Math.random() * 3) + 1;
+  computer = Math.floor(Math.random() * 3) + 1;
 };
 
-var compare = function (c, user) {
-  if ((c - user + 5) % 3 === 0) {
-    result.innerHTML = "You Lose";
-    score--;
-  } else if ((c - user + 5) % 3 === 1) {
-    result.innerHTML = "You Win";
-    score++;
-  } else {
-    result.innerHTML = "Draw";
-  }
-};
+
 const phase1 = function () {
   pickContainerC.classList.add("img-hidden");
   resultText.classList.add("display-none");
@@ -61,28 +51,43 @@ const phase2 = function () {
   resultText.classList.remove("display-none");
 };
 const userUpdateImg = function () {
-  const z = choices[p - 1];
+  const z = choices[player - 1];
   pImg.src = `images/icon-${z}.svg`;
   pickContainerP.classList.add(`pick-img-container-${z}`);
 };
-const logic = function () {
-  buttonContainer.classList.add("display-none");
-  resultContainer.classList.remove("display-none");
+
+const compare = function (computer, player) {
+  if ((computer - player + 5) % 3 === 0) {
+    result.innerHTML = "You Lose";
+    score--;
+  } else if ((computer - player + 5) % 3 === 1) {
+    result.innerHTML = "You Win";
+    score++;
+  } else {
+    result.innerHTML = "Draw";
+  }
+};
+
+const init = function () {
   rand();
   if (this == rock) {
-    p = 1;
+    player = 1;
   } else if (this == paper) {
-    p = 2;
+    player = 2;
   } else if (this == scissors) {
-    p = 3;
+    player = 3;
   }
+
+
+  buttonContainer.classList.add("display-none");
+  resultContainer.classList.remove("display-none");
   userUpdateImg();
   phase1();
   setTimeout(phase2, 500);
 
-  cImg.src = `images/icon-${choices[c - 1]}.svg`;
-  pickContainerC.classList.add(`pick-img-container-${choices[c - 1]}`);
-  compare(c, p);
+  cImg.src = `images/icon-${choices[computer - 1]}.svg`;
+  pickContainerC.classList.add(`pick-img-container-${choices[computer - 1]}`);
+  compare(computer, player);
   scoreNum.innerHTML = score;
 };
 const again = function () {
@@ -95,5 +100,5 @@ const again = function () {
     pickContainerC.classList.remove(`pick-img-container-${element}`)
   );
 };
-[rock,paper,scissors].forEach((element)=>(element.addEventListener("click", logic)));
+[rock,paper,scissors].forEach((element)=>(element.addEventListener("click", init)));
 playAgain.addEventListener("click", again);
